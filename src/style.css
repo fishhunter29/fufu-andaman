@@ -1,47 +1,94 @@
-/* Basic layout */
-.app-main {
+/* Desktop Layout */
+.desk-root {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: #f6f7f8;
+  color: #0f172a;
+}
+
+.desk-header {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.desk-grid {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 16px;
   display: grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: 280px 1fr 300px;
   gap: 16px;
 }
 
-.sidebar {
-  /* just a hook; sticky handled inline */
-}
-
-/* Mobile stacking */
-@media (max-width: 768px) {
-  .app-main {
-    grid-template-columns: 1fr;
-  }
-  .sidebar {
-    display: none; /* desktop-only; mobile has floating summary bar */
-  }
-}
-
-/* Optional light defaults */
-* { box-sizing: border-box; }
-html, body, #root { height: 100%; }
-body { margin: 0; background: #f6f7f8; color: #0f172a; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; }
-button { cursor: pointer; }
-
-/* Inputs: subtle focus ring for modern feel */
-input, select, textarea, button {
-  font: inherit;
-}
-input[type="date"], input[type="number"], select, textarea {
-  width: 100%;
-  padding: 8px 10px;
-  border-radius: 8px;
+.panel {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
   border: 1px solid #e5e7eb;
-  background: white;
-  color: #0f172a;
 }
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: #0ea5e9;
-  box-shadow: 0 0 0 2px rgba(14,165,233,.15);
+
+.control {
+  display: grid;
+  gap: 6px;
+  margin: 12px 0;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 8px 12px;
+  background: #0ea5e9;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.trow {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+
+.trow.grand {
+  font-size: 18px;
+  padding-top: 8px;
+  border-top: 1px dashed #e5e7eb;
+}
+
+/* Mobile */
+@media (max-width: 1180px) {
+  .desk-header,
+  .desk-grid {
+    display: none;
+  }
+}
+
+.mobile-summary {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0ea5e9;
+  color: #fff;
+  padding: 16px;
+  font-weight: bold;
+  text-align: center;
 }
