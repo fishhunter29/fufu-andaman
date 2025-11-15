@@ -1,8 +1,9 @@
-export default function App() {
-  return (
-    <div style={{ padding: 24, fontFamily: "system-ui" }}>
-      <h1>STEP MARKER: UI Test ✅</h1>
-      <p>This text proves we deployed the new build.</p>
-    </div>
-  );
-}
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
